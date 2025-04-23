@@ -1,0 +1,6 @@
+// Import other SCSS files
+@use '_variable';       // Import global variables
+@use '_mixins';         // Import mixins
+@use '_header';         // Import header styles
+@use '_footer';         // Import footer styles
+@use '_main';           // Import general page styles

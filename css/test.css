@@ -1,0 +1,6 @@
+.light-theme body {
+  background-color: themed("bg");
+  color: themed("text");
+}
+
+/*# sourceMappingURL=test.css.map */
