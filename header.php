@@ -35,14 +35,6 @@ $darkMode = isset($_COOKIE['cookie_consent']) &&
             </button>
         </nav>
     </header>
-
-    <!-- Load JavaScript files at the end of the body -->
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
 </body>
 
 </html>

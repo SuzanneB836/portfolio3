@@ -20,5 +20,13 @@ include 'cookie-consent.php';
 
 <?php include 'footer.php'; ?>
     
+
+    <!-- Load JavaScript files at the end of the body -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
