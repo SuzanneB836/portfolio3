@@ -1,4 +1,3 @@
-// Wait until the page is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     // =============================================
     // COOKIE CONSENT HANDLING
@@ -7,18 +6,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const declineCookiesBtn = document.getElementById('decline-cookies');
     const cookieBanner = document.getElementById('cookie-consent-banner');
 
+    // Show banner only if no consent decision has been made
+    if (cookieBanner) {
+        const consentCookie = getCookie('cookie_consent');
+        if (consentCookie === null) { // Only show if no decision exists
+            cookieBanner.style.display = 'block';
+        } else {
+            cookieBanner.style.display = 'none';
+        }
+    }
+
     if (acceptCookiesBtn && declineCookiesBtn) {
         acceptCookiesBtn.addEventListener('click', function() {
             setCookie('cookie_consent', 'true', 365);
             if (cookieBanner) cookieBanner.style.display = 'none';
+            
+            // Save current theme preference now that consent is given
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            setCookie('dark_mode', isDarkMode ? '1' : '0', 30);
         });
 
         declineCookiesBtn.addEventListener('click', function() {
+            // Delete the consent cookie instead of setting it to false
+            deleteCookie('cookie_consent');
+            // Also delete any existing theme preference
             deleteCookie('dark_mode');
-            setCookie('cookie_consent', 'false', 365);
             if (cookieBanner) cookieBanner.style.display = 'none';
-            document.body.classList.remove('dark-mode');
-            updateIcon('Sun');
         });
     }
 
@@ -27,25 +40,47 @@ document.addEventListener('DOMContentLoaded', function () {
     // =============================================
     const toggleButton = document.getElementById('theme-toggle');
 
-    // 1. CHECK FOR SAVED DARK MODE ON PAGE LOAD
-    if (getCookie('cookie_consent') === 'true' && getCookie('dark_mode') === '1') {
-        document.body.classList.add('dark-mode');
-        updateIcon('Moon');
-    }
-
-    // 2. HANDLE THEME TOGGLE CLICK
+    // 1. Always allow theme toggling, but only save if consent given
     toggleButton.addEventListener('click', function () {
-        // Only allow toggle if cookies are accepted
-        if (getCookie('cookie_consent') !== 'true') {
-            alert('Please accept cookies to use this feature');
-            return;
-        }
-        
         document.body.classList.toggle('dark-mode');
         const isDarkMode = document.body.classList.contains('dark-mode');
-        setCookie('dark_mode', isDarkMode ? '1' : '0', 30);
+        
+        // Only save preference if cookies are accepted
+        if (getCookie('cookie_consent') === 'true') {
+            setCookie('dark_mode', isDarkMode ? '1' : '0', 30);
+        }
+        
         updateIcon(isDarkMode ? 'Moon' : 'Sun');
     });
+
+    // 2. Initialize theme based on consent status
+    function initializeTheme() {
+        const hasConsent = getCookie('cookie_consent') === 'true';
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (hasConsent) {
+            // Use saved preference if consent given
+            const darkModePref = getCookie('dark_mode');
+            if (darkModePref === '1') {
+                document.body.classList.add('dark-mode');
+                updateIcon('Moon');
+            } else if (darkModePref === '0') {
+                document.body.classList.remove('dark-mode');
+                updateIcon('Sun');
+            }
+        } else {
+            // Use system preference if no consent
+            if (prefersDark) {
+                document.body.classList.add('dark-mode');
+                updateIcon('Moon');
+            } else {
+                document.body.classList.remove('dark-mode');
+                updateIcon('Sun');
+            }
+        }
+    }
+    
+    initializeTheme();
 
     // =============================================
     // HELPER FUNCTIONS

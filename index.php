@@ -11,17 +11,11 @@
 <?php include 'header.php'; ?>
 
 <main>
-    <!-- Debug output -->
-    <?php 
-    $cookieConsent = isset($_COOKIE['cookie_consent']);
-    echo "<!-- Cookie consent status: ".($cookieConsent ? 'true' : 'false')." -->";
-    ?>
+    
 </main>
 
 <?php 
-echo "<!-- Trying to include cookie-consent.php -->";
 include 'cookie-consent.php';
-echo "<!-- After include -->";
 ?>
 
 <?php include 'footer.php'; ?>

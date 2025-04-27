@@ -2,9 +2,11 @@
 // Start the session (if you need it for other things)
 session_start();
 
-// Check if dark mode cookie exists and is set to '1'
-// This runs when the page first loads
-$darkMode = isset($_COOKIE['dark_mode']) && $_COOKIE['dark_mode'] === '1';
+// Check if dark mode cookie exists and is set to '1' only if consent was given
+$darkMode = isset($_COOKIE['cookie_consent']) && 
+            $_COOKIE['cookie_consent'] === 'true' && 
+            isset($_COOKIE['dark_mode']) && 
+            $_COOKIE['dark_mode'] === '1';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +19,6 @@ $darkMode = isset($_COOKIE['dark_mode']) && $_COOKIE['dark_mode'] === '1';
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<!-- Add dark-mode class if cookie says we're in dark mode -->
 <body class="<?php echo $darkMode ? 'dark-mode' : ''; ?>">
 
     <header class="site-header">
