@@ -5,38 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suzanne Boon</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
 <?php include 'header.php'; ?>
 
-<div class="site-index">
+<div class="site-pagename">
     <div class="full-container">
         <div class="content-container">
-            <div class="hero-section">
-                <div class="text">
-                    <div id="text-name">
-                        <h1><span id="helloMessage">Hi</span>, I am <br> <span class="name">Suzanne Boon</span></h1> 
-                        <!-- Make this ^^^^^^^^^ smoother -->
-                    </div>
-                    <div class="text-desc">
-
-                    </div>
-                </div>
-                <div class="image">
-                    <div class="image-img">
-
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
 
 <?php 
 include 'cookie-consent.php';
-?>
+?> 
+<!-- Include cookie-consent in every file or just index? -->
 
 <?php include 'footer.php'; ?>
     

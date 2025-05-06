@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
 body {
   margin: 0;
   max-width: 100vw;
@@ -67,7 +69,7 @@ body.dark-mode a:hover {
 }
 .cookie-consent .cookie-btn.accept {
   background-color: #48A6A7;
-  color: white;
+  color: #ffffff;
 }
 .cookie-consent .cookie-btn.accept:hover {
   background-color: #006A71;
@@ -97,6 +99,13 @@ body.dark-mode .cookie-consent .cookie-btn.decline {
 }
 body.dark-mode .cookie-consent .cookie-btn.decline:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.body * .full-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
 /*# sourceMappingURL=style.css.map */
