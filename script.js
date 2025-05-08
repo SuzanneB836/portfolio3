@@ -147,13 +147,21 @@ var phrases = [
 ];
 
 var index = 0;
-var interval = 500; // Interval in milliseconds
+var interval = 800; // Interval in milliseconds
 
 // Function to update the message
 function updateMessage() {
-  document.getElementById("helloMessage").textContent = phrases[index];
-  index = (index + 1) % phrases.length;
-  setTimeout(updateMessage, interval);
+  var element = document.getElementById("helloMessage");
+  element.classList.remove('fade-in');
+  element.classList.add('fade-out');
+  
+  setTimeout(function() {
+    element.textContent = phrases[index];
+    element.classList.remove('fade-out');
+    element.classList.add('fade-in');
+    index = (index + 1) % phrases.length;
+    setTimeout(updateMessage, interval);
+  }, 300); // This timeout matches the fade-out duration
 }
 
 // Start updating the message

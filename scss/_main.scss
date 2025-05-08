@@ -120,13 +120,13 @@ body.dark-mode {
   }
 }
 
-.body {
+body {
   * {
     .full-container {
         @include flex-center;
         width: 100vw;
       .content-container {
-
+        width: 80%;
       }
     }
   }
