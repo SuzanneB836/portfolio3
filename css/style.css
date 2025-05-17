@@ -1,10 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
-.site-header .nav-links {
+.site-header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  top: 0;
+  position: sticky;
+  background-color: #ffffff;
+  z-index: 999;
+  animation: shadowShiftLight 7s ease-in-out infinite;
+}
+.site-header nav {
+  width: 80%;
+}
+.site-header nav .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-header nav .nav-links .nl-cont {
   display: flex;
 }
-.site-header .nav-links .nav-link {
+.site-header nav .nav-links .nl-cont .nav-link {
   display: flex;
+  align-items: center;
+  padding: 20px 10px;
+}
+.site-header nav .nav-links .nl-cont .nav-link .nav-icon-wrapper {
+  padding-right: 5px;
+}
+@media (max-width: 400px) {
+  .site-header nav .nav-links .nl-cont .nav-link .nav-text-wrapper {
+    display: none;
+  }
+}
+.site-header nav .nav-links #theme-toggle {
+  all: unset;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+body.dark-mode .site-header {
+  background-color: #030303;
+  animation: shadowShiftDark 7s ease-in-out infinite;
+}
+
+@keyframes shadowShiftLight {
+  0%, 100% {
+    box-shadow: 0 8px 16px rgba(72, 166, 167, 0.6);
+  }
+  50% {
+    box-shadow: 0 12px 24px rgba(0, 106, 113, 0.3);
+  }
+}
+@keyframes shadowShiftDark {
+  0%, 100% {
+    box-shadow: 0 8px 16px rgba(180, 235, 230, 0.6);
+  }
+  50% {
+    box-shadow: 0 12px 24px rgba(77, 182, 172, 0.3);
+  }
 }
 body {
   margin: 0;
@@ -20,6 +74,7 @@ body a {
 }
 body a:hover {
   color: #006A71;
+  transition: color 0.2s ease;
 }
 
 body.dark-mode {

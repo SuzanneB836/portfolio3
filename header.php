@@ -24,7 +24,8 @@ $darkMode = isset($_COOKIE['cookie_consent']) &&
     <header class="site-header">
         <nav>
             <div class="nav-links">
-                <a href="index.php" class="nav-link">
+                <div class="nl-cont">
+                    <a href="index.php" class="nav-link">
                     <div class="nav-icon-wrapper">
                         <i data-lucide="Home" class="nav-icon"></i>
                     </div>
@@ -48,11 +49,13 @@ $darkMode = isset($_COOKIE['cookie_consent']) &&
                         Contact
                     </div>
                 </a>
-            </div>
-            <button id="theme-toggle">
+                </div>
+                <button id="theme-toggle">
                   <!-- Show moon icon if dark mode, sun if light -->
                 <i data-lucide="<?php echo $darkMode ? 'Moon' : 'Sun'; ?>" class="theme-icon"></i>
             </button>
+            </div>
+            
         </nav>
     </header>
 </body>

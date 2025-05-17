@@ -19,7 +19,7 @@
                     <h1><span class="hmsg-cont"><span id="helloMessage">Hi</span></span>, I am <br> <span class="name">Suzanne Boon</span></h1>
                 </div>
                     <div class="text-desc">
-
+                        Front-end Developer
                     </div>
                 </div>
                 <div class="image">

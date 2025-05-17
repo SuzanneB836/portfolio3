@@ -13,6 +13,7 @@ body {
     display: inline-block;
     &:hover {
       color: $link-hover-color-light;
+      transition: color 0.2s ease;
     }
   }
 }
