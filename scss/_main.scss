@@ -13,8 +13,6 @@ body {
     display: inline-block;
     &:hover {
       color: $link-hover-color-light;
-      transform: scale(1.05);
-      transition: all 0.3s ease-in-out;
     }
   }
 }

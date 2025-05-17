@@ -16,7 +16,7 @@
             <div class="hero-section">
                 <div class="text">
                 <div id="text-name">
-                    <h1><span id="helloMessage">Hi</span>, I am <br> <span class="name">Suzanne Boon</span></h1>
+                    <h1><span class="hmsg-cont"><span id="helloMessage">Hi</span></span>, I am <br> <span class="name">Suzanne Boon</span></h1>
                 </div>
                     <div class="text-desc">
 

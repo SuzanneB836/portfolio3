@@ -1,3 +1,20 @@
+@use "variable" as *;
+@use "mixins" as *;
+
 .site-header {
-    
+    .nav-links {
+        display: flex;
+        .nav-link {
+            display: flex;
+
+            .nav-icon-wrapper {
+                .nav-icon {
+
+                }
+            }
+            .nav-text-wrapper {
+                
+            }
+        }
+    }
 }

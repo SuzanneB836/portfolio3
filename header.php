@@ -23,14 +23,34 @@ $darkMode = isset($_COOKIE['cookie_consent']) &&
 
     <header class="site-header">
         <nav>
-            <h1>My Portfolio</h1>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="index.php" class="nav-link">
+                    <div class="nav-icon-wrapper">
+                        <i data-lucide="Home" class="nav-icon"></i>
+                    </div>
+                    <div class="nav-text-wrapper">
+                        Home
+                    </div>
+                </a>
+                <a href="#" class="nav-link">
+                    <div class="nav-icon-wrapper">
+                        <i data-lucide="Briefcase" class="nav-icon"></i>
+                    </div>
+                    <div class="nav-text-wrapper">
+                        Work
+                    </div>
+                </a>
+                <a href="#" class="nav-link">
+                    <div class="nav-icon-wrapper">
+                        <i data-lucide="Mail" class="nav-icon"></i>
+                    </div>
+                    <div class="nav-text-wrapper">
+                        Contact
+                    </div>
+                </a>
+            </div>
             <button id="theme-toggle">
-                <!-- Show moon icon if dark mode, sun if light -->
+                  <!-- Show moon icon if dark mode, sun if light -->
                 <i data-lucide="<?php echo $darkMode ? 'Moon' : 'Sun'; ?>" class="theme-icon"></i>
             </button>
         </nav>
