@@ -8,36 +8,37 @@
 </head>
 <body>
 
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
 
-<div class="site-index">
-    <div class="full-container">
-        <div class="content-container">
-            <div class="hero-section">
-                <div class="text">
-                <div id="text-name">
-                    <h1><span class="hmsg-cont"><span id="helloMessage">Hi</span></span>, I am <br> <span class="name">Suzanne Boon</span></h1>
-                </div>
-                    <div class="text-desc">
-                        Front-end Developer
+    <div class="site-index">
+        <div class="full-container">
+            <div class="content-container">
+                <div class="hero-section">
+                    <div class="text">
+                        <div id="text-name">
+                            <h1>
+                                <span class="hmsg-cont">
+                                    <span id="helloMessage">Hi</span>
+                                </span>
+                                I am <span class="name">Suzanne Boon</span>
+                            </h1>
+                        </div>
+                        <div class="text-desc">
+                            Front-end Developer
+                        </div>
                     </div>
-                </div>
-                <div class="image">
-                    <div class="image-img">
-
+                    <div class="image">
+                        <div class="image-img">
+                            <img src="assets/hero_img.jpg" alt="Suzanne Boon" class="hero-img">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<?php
-include 'cookie-consent.php';
-?>
-
-<?php include 'footer.php'; ?>
-
+    <?php include 'cookie-consent.php'; ?>
+    <?php include 'footer.php'; ?>
 
     <!-- Load JavaScript files at the end of the body -->
     <script src="script.js"></script>

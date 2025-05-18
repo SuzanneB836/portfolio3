@@ -8,7 +8,7 @@
   position: sticky;
   background-color: $background-color-light;
   z-index: 999;
-  animation: shadowShiftLight 7s ease-in-out infinite;
+  animation: shadowShiftLightHeader 7s ease-in-out infinite;
 
   nav {
     width: 80%;
@@ -50,11 +50,11 @@
 body.dark-mode {
   .site-header {
     background-color: $background-color-dark;
-    animation: shadowShiftDark 7s ease-in-out infinite;
+    animation: shadowShiftDarkHeader 7s ease-in-out infinite;
   }
 }
 
-@keyframes shadowShiftLight {
+@keyframes shadowShiftLightHeader {
   0%, 100% {
     box-shadow: 0 8px 16px rgba(72, 166, 167, 0.6);
   }
@@ -63,7 +63,7 @@ body.dark-mode {
   }
 }
 
-@keyframes shadowShiftDark {
+@keyframes shadowShiftDarkHeader {
   0%, 100% {
     box-shadow: 0 8px 16px rgba(180, 235, 230, 0.6);
   }

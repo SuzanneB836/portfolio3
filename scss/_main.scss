@@ -7,10 +7,12 @@ body {
   width: 100%;
   background-color: $background-color-light;
   color: $text-color-light;
+  @include main-font;
   a {
     color: $link-color-light;
     text-decoration: none;
     display: inline-block;
+    @include second-font;
     &:hover {
       color: $link-hover-color-light;
       transition: color 0.2s ease;
@@ -124,6 +126,7 @@ body {
     .full-container {
         @include flex-center;
         width: 100vw;
+        margin: 50px 0;
       .content-container {
         width: 80%;
       }

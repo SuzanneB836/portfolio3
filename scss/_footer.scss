@@ -1,3 +1,74 @@
+@use "variable" as *;
+@use "mixins" as *;
+
 .site-footer {
-    
+  width: 100vw;
+  background-color: $background-color-light;
+  animation: shadowShiftLightFooter 7s ease-in-out infinite;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    .footer-copyright {
+      display: flex;
+      align-items: center;
+      @include special-font;
+      .copyright-icon {
+        color: $link-color-light;
+      }
+      .copyright-name {
+      }
+    }
+
+    .footer-socialicons {
+      display: flex;
+      .footer-s-icon {
+        margin-left: 10px;
+        .footer-github-link {
+          .footer-github-icon {
+          }
+        }
+        .footer-linkedin-link {
+          .footer-linkedin-icon {
+          }
+        }
+        .footer-email-link {
+          .footer-email-icon {
+          }
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .site-footer {
+    background-color: $background-color-dark;
+    animation: shadowShiftDarkFooter 7s ease-in-out infinite;
+
+    .copyright-icon {
+      color: $link-color-dark;
+    }
+  }
+}
+
+@keyframes shadowShiftLightFooter {
+  0%,
+  100% {
+    box-shadow: 0 -8px 16px rgba(72, 166, 167, 0.6);
+  }
+  50% {
+    box-shadow: 0 -12px 24px rgba(0, 106, 113, 0.3);
+  }
+}
+
+@keyframes shadowShiftDarkFooter {
+  0%,
+  100% {
+    box-shadow: 0 -8px 16px rgba(180, 235, 230, 0.6);
+  }
+  50% {
+    box-shadow: 0 -12px 24px rgba(77, 182, 172, 0.3);
+  }
 }

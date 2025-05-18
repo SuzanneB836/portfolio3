@@ -26,8 +26,15 @@
   font-style: normal;
 }
 
-@mixin special-font {
-    font-family: "Meow Script", cursive;
-    font-weight: 400;
-    font-style: normal;
+@mixin second-font {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+@mixin special-font {
+    font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
