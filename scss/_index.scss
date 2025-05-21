@@ -87,6 +87,54 @@ body {
               @include special-font;
               margin-top: 0;
             }
+            .text-desc2 {
+              font-size: 12px;
+            }
+            // Light Mode CTAs
+            .cta-buttons {
+              display: flex;
+              gap: 16px;
+              margin-top: 20px;
+
+              .cta-1 {
+                a {
+                  padding: 10px 24px;
+                  border-radius: 24px;
+                  font-weight: 600;
+                  text-decoration: none;
+                  transition: all 0.3s ease;
+                  display: inline-block;
+                  text-align: center;
+                  font-size: 0.9em;
+
+                  &.cta-btn {
+                    background-color: $link-color-light; // #48A6A7
+                    color: white; // Better contrast on light bg
+                    border: 2px solid $link-color-light;
+
+                    &:hover {
+                      background-color: $link-hover-color-light; // #006A71
+                      border-color: $link-hover-color-light;
+                      transform: translateY(-2px);
+                      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                    }
+                  }
+
+                  &.btn {
+                    background-color: transparent;
+                    color: $link-color-light; // #48A6A7
+                    border: 2px solid $link-color-light;
+
+                    &:hover {
+                      color: $link-hover-color-light; // #006A71
+                      border-color: $link-hover-color-light;
+                      transform: translateY(-2px);
+                      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -97,6 +145,32 @@ body {
 body.dark-mode {
   .name {
     color: $link-color-dark;
+  }
+  .cta-buttons {
+    .cta-1 {
+      a {
+        &.cta-btn {
+          background-color: $link-color-dark;
+          color: #333;
+          border: 2px solid $link-color-dark;
+
+          &:hover {
+            background-color: $link-hover-color-dark;
+            border-color: $link-hover-color-dark;
+          }
+        }
+
+        &.btn {
+          color: $link-color-dark;
+          border: 2px solid $link-color-dark;
+
+          &:hover {
+            color: $link-hover-color-dark;
+            border-color: $link-hover-color-dark;
+          }
+        }
+      }
+    }
   }
 }
 

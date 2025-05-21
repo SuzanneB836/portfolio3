@@ -26,12 +26,32 @@
                         <div class="text-desc">
                             Front-end Developer
                         </div>
+                        <div class="text-desc2">
+                            Turning designs into experiences, then asking: What’s next?
+                        </div>
+                        <div class="cta-buttons">
+                            <div class="cta-1">
+                                <a href="project.php" class="cta-btn">View Projects</a>
+                            </div>
+                            <div class="cta-1">
+                                <a href="contact.php" class="btn">Contact Me</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="image">
                         <div class="image-img">
                             <img src="assets/hero_img.jpg" alt="Suzanne Boon" class="hero-img">
                         </div>
                     </div>
+                </div>
+                <div class="skills-section">
+
+                </div>
+                <div class="exp-section">
+
+                </div>
+                <div class="projects-section">
+
                 </div>
             </div>
         </div>
