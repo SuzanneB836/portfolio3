@@ -2,7 +2,7 @@
 @use "mixins" as *;
 
 .site-footer {
-  width: 100vw;
+  max-width: 100vw;
   background-color: $background-color-light;
   animation: shadowShiftLightFooter 7s ease-in-out infinite;
 
