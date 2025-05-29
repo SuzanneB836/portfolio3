@@ -7,9 +7,9 @@ body {
       .content-container {
         .hero-section {
           display: flex;
-          align-items: center; // Vertically center .text to .image
+          align-items: center;
           width: 100%;
-          gap: 5%; // Reasonable gap
+          gap: 5%;
 
           .image {
             width: 28%;
@@ -90,7 +90,6 @@ body {
             .text-desc2 {
               font-size: 12px;
             }
-            // Light Mode CTAs
             .cta-buttons {
               display: flex;
               gap: 16px;
@@ -108,12 +107,12 @@ body {
                   font-size: 0.9em;
 
                   &.cta-btn {
-                    background-color: $link-color-light; // #48A6A7
-                    color: white; // Better contrast on light bg
+                    background-color: $link-color-light;
+                    color: white;
                     border: 2px solid $link-color-light;
 
                     &:hover {
-                      background-color: $link-hover-color-light; // #006A71
+                      background-color: $link-hover-color-light;
                       border-color: $link-hover-color-light;
                       transform: translateY(-2px);
                       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -122,11 +121,11 @@ body {
 
                   &.btn {
                     background-color: transparent;
-                    color: $link-color-light; // #48A6A7
+                    color: $link-color-light;
                     border: 2px solid $link-color-light;
 
                     &:hover {
-                      color: $link-hover-color-light; // #006A71
+                      color: $link-hover-color-light;
                       border-color: $link-hover-color-light;
                       transform: translateY(-2px);
                       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -137,6 +136,13 @@ body {
             }
           }
         }
+        .skills-section {
+
+        }
+        .exp-section {
+
+        }
+        
       }
     }
   }
@@ -199,7 +205,7 @@ body.dark-mode {
         .content-container {
           .hero-section {
             flex-direction: column;
-            gap: 32px; // More vertical gap
+            gap: 32px;
 
             .image {
               width: 70%;

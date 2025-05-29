@@ -45,13 +45,13 @@
                     </div>
                 </div>
                 <div class="skills-section">
-
+                    <!-- Skills content here -->
                 </div>
                 <div class="exp-section">
-
+                    <!-- Experience content here -->
                 </div>
                 <div class="projects-section">
-
+                    
                 </div>
             </div>
         </div>
