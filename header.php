@@ -33,15 +33,15 @@ $darkMode = isset($_COOKIE['cookie_consent']) &&
                         Home
                     </div>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="projects.php" class="nav-link">
                     <div class="nav-icon-wrapper">
                         <i data-lucide="Briefcase" class="nav-icon"></i>
                     </div>
                     <div class="nav-text-wrapper">
-                        Work
+                        Projects
                     </div>
                 </a>
-                <a href="#" class="nav-link">
+                <a href="contact.php" class="nav-link">
                     <div class="nav-icon-wrapper">
                         <i data-lucide="Mail" class="nav-icon"></i>
                     </div>

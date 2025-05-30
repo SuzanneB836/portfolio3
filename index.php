@@ -1,3 +1,7 @@
+<?php
+$isIndex = true;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,14 +48,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="skills-section">
+                <div class="skills-include">
                     <!-- Skills content here -->
                 </div>
-                <div class="exp-section">
+                <div class="exp-include">
                     <!-- Experience content here -->
                 </div>
-                <div class="projects-section">
-                    
+                <div class="projects-include">
+                    <?php
+                        include 'index-sections\projects-section.php';
+                    ?>
                 </div>
             </div>
         </div>
@@ -61,7 +67,8 @@
     <?php include 'footer.php'; ?>
 
     <!-- Load JavaScript files at the end of the body -->
-    <script src="script.js"></script>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/introduction.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         // Initialize Lucide icons

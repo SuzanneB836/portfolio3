@@ -1,3 +1,7 @@
+<?php
+$isIndex = false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +14,12 @@
 
 <?php include 'header.php'; ?>
 
-<div class="site-pagename">
+<div class="site-projects">
     <div class="full-container">
         <div class="content-container">
-            
+            <?php
+                include 'index-sections/projects-section.php';
+            ?>
         </div>
     </div>
 </div>
