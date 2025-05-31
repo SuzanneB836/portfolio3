@@ -18,7 +18,7 @@ $isIndex = false;
     <div class="full-container">
         <div class="content-container">
             <?php
-                include 'index-sections/projects-section.php';
+                include 'sections-index/projects-section.php';
             ?>
         </div>
     </div>

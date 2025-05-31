@@ -2,7 +2,7 @@
 Project filtering
 
 Used for:
-index-sections\projects-section.php
+sections-index\projects-section.php
 projects.php
 */
 
