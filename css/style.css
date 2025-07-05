@@ -80,6 +80,7 @@ body.dark-mode .site-header {
 }
 .site-footer .footer-content .footer-copyright .copyright-icon {
   color: #48A6A7;
+  margin-right: 5px;
 }
 .site-footer .footer-content .footer-socialicons {
   display: flex;
@@ -455,11 +456,20 @@ body.dark-mode .cta-buttons .cta-1 a.btn:hover {
 }
 .projects-section .projects-grid-container .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, 320px);
+  justify-content: center;
   gap: 2rem;
   margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 1rem;
+  justify-items: center;
 }
 .projects-section .projects-grid-container .projects-grid .projects-card {
+  width: 320px;
+  height: 420px;
+  max-width: unset;
+  min-width: unset;
+  box-sizing: border-box;
   border: 1px solid rgba(72, 166, 167, 0.2);
   border-radius: 1.5rem;
   padding: 1.8rem;
@@ -639,8 +649,7 @@ body.dark-mode .projects-show-more-container .projects-show-more-link {
 
 @media (max-width: 1024px) {
   .projects-section .projects-grid-container .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, 300px);
   }
   .projects-section .projects-filter-toolbar {
     gap: 0.5rem;
@@ -648,6 +657,11 @@ body.dark-mode .projects-show-more-container .projects-show-more-link {
   }
   .projects-section .projects-card {
     padding: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .projects-section .projects-grid-container .projects-grid {
+    grid-template-columns: repeat(auto-fit, 250px);
   }
 }
 @media (max-width: 700px) {
@@ -665,10 +679,12 @@ body.dark-mode .projects-show-more-container .projects-show-more-link {
     padding: 0 0.5rem;
   }
   .projects-section .projects-grid-container .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, 220px);
     gap: 0.7rem;
   }
   .projects-section .projects-card {
+    width: 100%;
+    height: auto;
     padding: 0.7rem;
     border-radius: 1rem;
     gap: 0.7rem;
@@ -699,9 +715,11 @@ body.dark-mode .projects-show-more-container .projects-show-more-link {
 }
 @media (max-width: 480px) {
   .projects-section .projects-grid-container .projects-grid {
-    gap: 0.7rem;
+    grid-template-columns: 1fr;
   }
   .projects-section .projects-card {
+    width: 100%;
+    height: auto;
     padding: 0.7rem;
     border-radius: 1rem;
   }
