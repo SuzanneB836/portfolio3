@@ -260,20 +260,20 @@ body.dark-mode {
         }
       }
     }
-  }
 
-  .projects-show-more-container {
-    background-color: $link-color-dark;
-    color: $background-color-dark;
-
-    &:hover,
-    &:focus {
-      background-color: $link-hover-color-dark;
-      box-shadow: 0 4px 12px rgba($link-hover-color-dark, 0.3);
-    }
-
-    .projects-show-more-link {
+    .projects-show-more-container {
+      background-color: $link-color-dark;
       color: $background-color-dark;
+
+      &:hover,
+      &:focus {
+        background-color: $link-hover-color-dark;
+        box-shadow: 0 4px 12px rgba($link-hover-color-dark, 0.3);
+      }
+
+      .projects-show-more-link {
+        color: $background-color-dark;
+      }
     }
   }
 }
