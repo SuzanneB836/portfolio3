@@ -4,7 +4,7 @@ $projects = [
         'title' => 'Portfolio Website',
         'description' => 'A sleek and responsive personal portfolio...',
         'skills' => ['HTML', 'CSS', 'JavaScript'],
-        'image' => 'assets/hero_img.jpg', // your own image path
+        'image' => 'assets/hero_img.jpg',
         'tags' => 'html css javascript',
         'link' => '#'
     ],
@@ -20,7 +20,7 @@ $projects = [
         'title' => 'Portfolio Website',
         'description' => 'A sleek and responsive personal portfolio...',
         'skills' => ['HTML', 'CSS', 'JavaScript'],
-        'image' => 'images/portfolio.png', // your own image path
+        'image' => 'images/portfolio.png',
         'tags' => 'html css javascript',
         'link' => '#'
     ],
@@ -36,7 +36,7 @@ $projects = [
         'title' => 'Portfolio Website',
         'description' => 'A sleek and responsive personal portfolio...',
         'skills' => ['HTML', 'CSS', 'JavaScript'],
-        'image' => 'images/portfolio.png', // your own image path
+        'image' => 'images/portfolio.png',
         'tags' => 'html css javascript',
         'link' => '#'
     ],
@@ -48,23 +48,11 @@ $projects = [
         'tags' => 'wordpress php css',
         'link' => '#'
     ],
-    // etc...
 ];
 
-if ($isIndex) {
-    $projects = array_slice($projects, 0, 3);
-}
+$defaultProjectLimit = 3;
+$projectLimit = $isIndex ? $defaultProjectLimit : count($projects);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suzanne Boon</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
 
 <div class="projects-section">
     <div class="projects-filter-toolbar" role="toolbar" aria-label="Project filter buttons">
@@ -95,28 +83,28 @@ if ($isIndex) {
     </div>
 
     <div class="projects-grid-container">
-    <div class="projects-grid">
-        <?php
-        $displayedProjects = $isIndex ? array_slice($projects, 0, 3) : $projects;
-        foreach ($displayedProjects as $project): ?>
-            <div class="projects-card" data-tags="<?= $project['tags'] ?>">
-                <div class="projects-card-image" aria-hidden="true">
-                    <img src="<?= $project['image'] ?>" alt="" class="projects-card-img" />
-                </div>
-                <h2 class="projects-card-title"><?= $project['title'] ?></h2>
-                <p class="projects-card-desc"><?= $project['description'] ?></p>
-                <div class="projects-card-skills">
-                    <?php foreach ($project['skills'] as $skill): ?>
-                        <span class="projects-card-skill"><?= $skill ?></span>
-                    <?php endforeach; ?>
-                </div>
-                <a href="<?= $project['link'] ?>" class="projects-card-link">
-                    View Project <i data-lucide="arrow-right" class="projects-card-link-icon"></i>
-                </a>
-            </div>
-        <?php endforeach; ?>
-    </div>
+        <div class="projects-grid">
+            <?php foreach ($projects as $index => $project): 
+                $hidden = $isIndex && $index >= $defaultProjectLimit ? 'style="display: none;"' : '';
+            ?>
+                <div class="projects-card" data-tags="<?= $project['tags'] ?>" <?= $hidden ?>>
+                    <div class="projects-card-image" aria-hidden="true">
+                        <img src="<?= $project['image'] ?>" alt="" class="projects-card-img" />
                     </div>
+                    <h2 class="projects-card-title"><?= $project['title'] ?></h2>
+                    <p class="projects-card-desc"><?= $project['description'] ?></p>
+                    <div class="projects-card-skills">
+                        <?php foreach ($project['skills'] as $skill): ?>
+                            <span class="projects-card-skill"><?= $skill ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                    <a href="<?= $project['link'] ?>" class="projects-card-link">
+                        View Project <i data-lucide="arrow-right" class="projects-card-link-icon"></i>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
     <?php if ($isIndex): ?>
         <div class="projects-show-more-container">
@@ -127,13 +115,13 @@ if ($isIndex) {
     <?php endif; ?>
 </div>
 
+<script>
+window.projectsData = {
+    allProjects: <?php echo json_encode($projects); ?>,
+    isIndex: <?php echo $isIndex ? 'true' : 'false'; ?>,
+    defaultLimit: <?php echo $defaultProjectLimit; ?>
+};
+</script>
+
 <script src="javascript/project-filtering.js"></script>
-</body>
-</html>
-
-
-
-
-
-
-
+<script src="javascript/responsive-projects.js"></script>
