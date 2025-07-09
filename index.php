@@ -18,19 +18,21 @@ $isIndex = true;
         <div class="full-container">
             <div class="content-container">
                 <div class="hero-include">
-                                        <?php
-                        include 'sections-index\hero-section.php';
+                    <?php
+                        include 'sections-index/hero-section.php';
                     ?>
                 </div>
                 <div class="skills-include">
-                    <!-- Skills content here -->
+                    <?php
+                        include 'sections-index/skills-section.php';
+                    ?>
                 </div>
                 <div class="exp-include">
                     <!-- Experience content here -->
                 </div>
                 <div class="projects-include">
                     <?php
-                        include 'sections-index\projects-section.php';
+                        include 'sections-index/projects-section.php';
                     ?>
                 </div>
             </div>

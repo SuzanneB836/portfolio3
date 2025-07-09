@@ -201,7 +201,7 @@ body.dark-mode {
 
         &:hover,
         &:focus {
-          background-color: #4DB6AC; // use $link-hover-color-dark for better contrast
+          background-color: #4DB6AC; 
           color: $background-color-dark;
           outline: none;
           transform: translateY(-2px);
