@@ -1,0 +1,305 @@
+@use "variable" as *;
+@use "mixins" as *;
+
+.site-contact {
+  /* Building on your existing full-container/content-container structure */
+  .full-container {
+    /* Your existing styles are preserved */
+    .content-container {
+      /* Your existing width: 80% is preserved */
+
+      /* Contact-specific styles */
+      padding: 2rem;
+      background: $background-color-light;
+      color: $text-color-light;
+      border-radius: 1rem;
+      @include shadow;
+
+      h1 {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        color: $link-color-light;
+        @include main-font;
+      }
+
+      .lead {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #555555;
+        @include special-font;
+      }
+
+      /* Form Styles */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+        @include main-font;
+
+        .form-group {
+          label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            background: #f8f8f8;
+            border: 1px solid #dddddd;
+            @include transition;
+
+            &:focus-within {
+              border-color: $link-color-light;
+              box-shadow: 0 0 0 2px rgba($link-color-light, 0.1);
+            }
+
+            .input-icon {
+              color: #888888;
+              width: 18px;
+              height: 18px;
+              flex-shrink: 0;
+            }
+
+            input,
+            textarea {
+              width: 100%;
+              border: none;
+              background: transparent;
+              font-size: 0.95rem;
+              color: $text-color-light;
+              @include main-font;
+              resize: none;
+
+              &:focus {
+                outline: none;
+              }
+
+              &::placeholder {
+                color: #aaaaaa;
+              }
+            }
+
+            textarea {
+              min-height: 120px;
+            }
+          }
+        }
+
+        .submit-button {
+          @include button;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          background: $link-color-light;
+          color: white;
+          padding: 0.75rem;
+          border-radius: 0.5rem;
+          font-weight: 600;
+          margin-top: 0.5rem;
+          @include transition;
+
+          &:hover {
+            background: $link-hover-color-light;
+            transform: translateY(-1px);
+          }
+
+          .button-icon {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+
+      /* Social Links */
+      .socials {
+        .divider {
+          display: flex;
+          align-items: center;
+          margin: 1.5rem 0;
+          color: #888888;
+          font-size: 0.9rem;
+          @include second-font;
+
+          &::before,
+          &::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #dddddd;
+          }
+
+          span {
+            padding: 0 1rem;
+          }
+        }
+
+        .social-links {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+
+          .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: $link-color-light;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            @include transition;
+            @include second-font;
+
+            &:hover {
+              background: rgba($link-color-light, 0.1);
+            }
+
+            i {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Dark Mode - Building on your existing structure */
+body.dark-mode {
+  .site-contact {
+    .full-container {
+      .content-container {
+        background: $background-color-dark;
+        color: $text-color-dark;
+        border: 1px solid #333333;
+
+        h1 {
+          color: $link-color-dark;
+        }
+
+        .lead {
+          color: #cccccc;
+        }
+
+        form {
+          .form-group {
+            label {
+              background: #111111;
+              border-color: #333333;
+
+              &:focus-within {
+                border-color: $link-color-dark;
+                box-shadow: 0 0 0 2px rgba($link-color-dark, 0.1);
+              }
+
+              .input-icon {
+                color: #888888;
+              }
+
+              input,
+              textarea {
+                color: $text-color-dark;
+
+                &::placeholder {
+                  color: #666666;
+                }
+              }
+            }
+          }
+
+          .submit-button {
+            background: $link-color-dark;
+            color: $text-color-light;
+
+            &:hover {
+              background: $link-hover-color-dark;
+            }
+          }
+        }
+
+        .socials {
+          .divider {
+            color: #888888;
+
+            &::before,
+            &::after {
+              border-color: #333333;
+            }
+          }
+
+          .social-links {
+            .social-link {
+              color: $link-color-dark;
+
+              &:hover {
+                background: rgba($link-color-dark, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .site-contact {
+    .full-container {
+      .content-container {
+        padding: 1.5rem;
+        width: 90%; /* Slightly wider on tablets */
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .site-contact {
+    .full-container {
+      margin: 30px 0; /* Reduced margin on mobile */
+
+      .content-container {
+        padding: 1.25rem;
+        width: 95%; /* Almost full width on mobile */
+        border-radius: 0; /* Full bleed on small screens */
+
+        form {
+          .form-group {
+            label {
+              padding: 0.75rem;
+            }
+          }
+        }
+
+        .socials {
+          .social-links {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-clip: content-box !important;
+  box-shadow: 0 0 0 1000px $background-color-light inset !important;
+  color: $text-color-light !important;
+  -webkit-text-fill-color: $text-color-light !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+body.dark-mode {
+  input:-webkit-autofill,
+  textarea:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $background-color-dark inset !important;
+    color: $text-color-dark !important;
+    -webkit-text-fill-color: $text-color-dark !important;
+  }
+}

@@ -75,7 +75,7 @@ body.dark-mode {
 
     &.accept {
       background-color: $link-color-light;
-      color: #ffffff;
+      color: $text-color-light;
 
       &:hover {
         background-color: $link-hover-color-light;

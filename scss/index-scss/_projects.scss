@@ -238,7 +238,7 @@ body.dark-mode {
           }
 
           .projects-card-image {
-            background-color: #000000;
+            background-color: $text-color-dark;
 
             &::before {
               background: linear-gradient(135deg, rgba($link-color-dark, 0.1) 0%, rgba($link-hover-color-dark, 0.2) 100%);
@@ -250,7 +250,7 @@ body.dark-mode {
           }
 
           .projects-card-desc {
-            color: #ffffff;
+            color: $text-color-dark;
           }
 
           .projects-card-skills {
