@@ -1,54 +1,5 @@
 <?php
-$projects = [
-    [
-        'title' => 'Portfolio Website',
-        'description' => 'A sleek and responsive personal portfolio...',
-        'skills' => ['HTML', 'CSS', 'JavaScript'],
-        'image' => 'assets/hero_img.jpg',
-        'tags' => 'html css javascript',
-        'link' => '#'
-    ],
-    [
-        'title' => 'WordPress Theme',
-        'description' => 'Custom WordPress theme with unique block styling...',
-        'skills' => ['PHP', 'WordPress', 'CSS'],
-        'image' => 'images/wp-theme.png',
-        'tags' => 'wordpress php css',
-        'link' => '#'
-    ],
-    [
-        'title' => 'Portfolio Website',
-        'description' => 'A sleek and responsive personal portfolio...',
-        'skills' => ['HTML', 'CSS', 'JavaScript'],
-        'image' => 'images/portfolio.png',
-        'tags' => 'html css javascript',
-        'link' => '#'
-    ],
-    [
-        'title' => 'WordPress Theme',
-        'description' => 'Custom WordPress theme with unique block styling...',
-        'skills' => ['PHP', 'WordPress', 'CSS'],
-        'image' => 'images/wp-theme.png',
-        'tags' => 'wordpress php css',
-        'link' => '#'
-    ],
-    [
-        'title' => 'Portfolio Website',
-        'description' => 'A sleek and responsive personal portfolio...',
-        'skills' => ['HTML', 'CSS', 'JavaScript'],
-        'image' => 'images/portfolio.png',
-        'tags' => 'html css javascript',
-        'link' => '#'
-    ],
-    [
-        'title' => 'WordPress Theme',
-        'description' => 'Custom WordPress theme with unique block styling...',
-        'skills' => ['PHP', 'WordPress', 'CSS'],
-        'image' => 'images/wp-theme.png',
-        'tags' => 'wordpress php css',
-        'link' => '#'
-    ],
-];
+require __DIR__ . '/../projects-data.php';
 
 $defaultProjectLimit = 3;
 $projectLimit = $isIndex ? $defaultProjectLimit : count($projects);
@@ -98,9 +49,10 @@ $projectLimit = $isIndex ? $defaultProjectLimit : count($projects);
                             <span class="projects-card-skill"><?= $skill ?></span>
                         <?php endforeach; ?>
                     </div>
-                    <a href="<?= $project['link'] ?>" class="projects-card-link">
-                        View Project <i data-lucide="arrow-right" class="projects-card-link-icon"></i>
-                    </a>
+                    <a href="single-project.php?slug=<?= urlencode($project['slug']) ?>" class="projects-card-link">
+    View Project <i data-lucide="arrow-right" class="projects-card-link-icon"></i>
+</a>
+
                 </div>
             <?php endforeach; ?>
         </div>
