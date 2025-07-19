@@ -2,13 +2,8 @@
 @use "mixins" as *;
 
 .site-contact {
-  /* Building on your existing full-container/content-container structure */
   .full-container {
-    /* Your existing styles are preserved */
     .content-container {
-      /* Your existing width: 80% is preserved */
-
-      /* Contact-specific styles */
       padding: 2rem;
       background: $background-color-light;
       color: $text-color-light;
@@ -103,6 +98,7 @@
           &:hover {
             background: $link-hover-color-light;
             transform: translateY(-1px);
+            @include smooth-transition();
           }
 
           .button-icon {
@@ -153,6 +149,7 @@
 
             &:hover {
               background: rgba($link-color-light, 0.1);
+              @include smooth-transition();
             }
 
             i {

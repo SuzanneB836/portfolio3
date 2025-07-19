@@ -43,13 +43,13 @@ $projectLimit = $isIndex ? $defaultProjectLimit : count($projects);
                         <img src="<?= $project['image'] ?>" alt="" class="projects-card-img" />
                     </div>
                     <h2 class="projects-card-title"><?= $project['title'] ?></h2>
-                    <p class="projects-card-desc"><?= $project['description'] ?></p>
+                    <p class="projects-card-desc"><?= $project['summary'] ?></p>
                     <div class="projects-card-skills">
                         <?php foreach ($project['skills'] as $skill): ?>
                             <span class="projects-card-skill"><?= $skill ?></span>
                         <?php endforeach; ?>
                     </div>
-                    <a href="single-project.php?slug=<?= urlencode($project['slug']) ?>" class="projects-card-link">
+                    <a href="single-project.php?project_id=<?= urlencode($project['project_id']) ?>" class="projects-card-link">
     View Project <i data-lucide="arrow-right" class="projects-card-link-icon"></i>
 </a>
 

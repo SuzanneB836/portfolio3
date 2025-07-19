@@ -26,16 +26,29 @@
       display: flex;
       .footer-s-icon {
         margin-left: 10px;
+        a {
+          @include smooth-transition();
+          color: $link-color-light;
+          &:hover,
+          &:focus {
+            color: $link-hover-color-light;
+            transform: translateY(-2px);
+            @include smooth-transition();
+          }
+        }
         .footer-github-link {
           .footer-github-icon {
+            @include smooth-transition();
           }
         }
         .footer-linkedin-link {
           .footer-linkedin-icon {
+            @include smooth-transition();
           }
         }
         .footer-email-link {
           .footer-email-icon {
+            @include smooth-transition();
           }
         }
       }

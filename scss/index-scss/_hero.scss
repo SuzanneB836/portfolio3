@@ -98,7 +98,7 @@
                   border-radius: 24px;
                   font-weight: 600;
                   text-decoration: none;
-                  transition: all 0.3s ease;
+                  @include smooth-transition();
                   display: inline-block;
                   text-align: center;
                   font-size: 0.9em;

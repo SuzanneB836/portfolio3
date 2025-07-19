@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const filterValue = this.getAttribute('data-filter');
       filterProjects(filterValue);
 
+      // Update URL (remove ?filter= for 'all', set for others)
+      const url = new URL(window.location);
+      if (filterValue === 'all') {
+        url.searchParams.delete('filter');
+      } else {
+        url.searchParams.set('filter', filterValue);
+      }
+      window.history.replaceState({}, '', url);
+
       // Smooth scroll to top of projects
       document.querySelector('.projects-grid').scrollIntoView({
         behavior: 'smooth'
@@ -42,8 +51,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initialize with all projects shown
-  filterProjects('all');
+
+  // Helper to get query param
+  function getQueryParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+  }
+
+  // Check for filter param in URL
+  const urlFilter = getQueryParam('filter');
+  if (urlFilter) {
+    // Set active button if exists
+    filterButtons.forEach(btn => {
+      if (btn.getAttribute('data-filter') === urlFilter) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    filterProjects(urlFilter);
+  } else {
+    filterProjects('all');
+  }
 
   // Add animation on scroll
   const animateOnScroll = function() {

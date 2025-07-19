@@ -2,8 +2,15 @@
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
+
+// Universal smooth transition mixin
+@mixin smooth-transition($props: all, $duration: 0.3s, $timing: cubic-bezier(0.25, 0.8, 0.25, 1)) {
+  transition: #{$props} #{$duration} #{$timing};
+}
+
 @mixin transition {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  @include smooth-transition(background-color, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
+  @include smooth-transition(color, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
 }
 
 @mixin button {
@@ -12,7 +19,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  @include smooth-transition();
 }
 
 @mixin flex-center {

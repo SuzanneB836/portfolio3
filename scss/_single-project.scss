@@ -1,0 +1,49 @@
+@use "variable" as *;
+@use "mixins" as *;
+
+.site-project-detail {
+    .full-container {
+        .content-container {
+            .image {
+
+            }
+            .title {
+
+            }
+            .skills {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-top: auto;
+
+          .skill {
+            border: 1px solid $link-color-light;
+            background-color: rgba($link-color-light, 0.1);
+            padding: 0.4rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $link-color-light;
+            @include smooth-transition();
+            &:hover {
+              background-color: $link-color-light;
+              color: $background-color-light;
+              @include smooth-transition();
+            }
+        }
+            .summary {
+
+            }
+            .description {
+
+            }
+            .live {
+
+            }
+            .return {
+
+            }
+        }
+        }
+    }
+}

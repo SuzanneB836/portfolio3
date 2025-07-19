@@ -37,6 +37,8 @@ body.dark-mode {
           &:hover {
             background-color: $link-hover-color-dark;
             border-color: $link-hover-color-dark;
+            @include smooth-transition(background-color, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
+            @include smooth-transition(border-color, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
           }
         }
 
@@ -47,6 +49,8 @@ body.dark-mode {
           &:hover {
             color: $link-hover-color-dark;
             border-color: $link-hover-color-dark;
+            @include smooth-transition(color, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
+            @include smooth-transition(border-color, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
           }
         }
       }

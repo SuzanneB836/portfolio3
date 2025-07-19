@@ -15,7 +15,7 @@ body {
     @include second-font;
     &:hover {
       color: $link-hover-color-light;
-      transition: color 0.2s ease;
+      @include smooth-transition(color);
     }
   }
 }
@@ -27,6 +27,7 @@ body.dark-mode {
     color: $link-color-dark;
     &:hover {
       color: $link-hover-color-dark;
+      @include smooth-transition(color);
     }
   }
 }

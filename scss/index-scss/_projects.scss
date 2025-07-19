@@ -20,7 +20,7 @@
       font-weight: 500;
       color: $link-color-light;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      @include smooth-transition();
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -31,6 +31,7 @@
         color: $link-hover-color-light;
         outline: none;
         transform: translateY(-2px);
+        @include smooth-transition();
       }
 
       &.active {
@@ -40,6 +41,7 @@
 
         &:hover {
           background-color: $link-hover-color-light;
+          @include smooth-transition();
         }
       }
     }
@@ -70,27 +72,38 @@
         gap: 1.2rem;
         background: $background-color-light;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        @include smooth-transition();
         opacity: 1;
         transform: translateY(0);
-        animation: fadeIn 0.5s ease forwards;
+        animation: fadeIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 
         &.hide {
           display: none;
         }
 
         &:hover {
+          @include smooth-transition();
           transform: translateY(-8px);
           box-shadow: 0 12px 24px rgba($link-hover-color-light, 0.15);
         }
 
         .projects-card-image {
           height: 200px;
+          max-width: 360px;
           background-color: #f3f6fa;
           border-radius: 1rem;
           margin-bottom: 1rem;
           overflow: hidden;
           position: relative;
+
+          img {
+            width: 100%;
+            max-width: 360px;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+          }
 
           &::before {
             content: "";
@@ -100,7 +113,7 @@
             right: 0;
             bottom: 0;
             opacity: 0;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            @include smooth-transition();
           }
 
           .projects-card:hover &::before {
@@ -136,11 +149,12 @@
             font-size: 0.8rem;
             font-weight: 500;
             color: $link-color-light;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            @include smooth-transition();
 
             .projects-card:hover & {
               background-color: $link-color-light;
               color: $background-color-light;
+              @include smooth-transition();
             }
           }
         }
@@ -148,8 +162,24 @@
         .projects-card-link {
           display: flex;
           align-items: center;
+          cursor: pointer;
+          @include smooth-transition();
+          color: $link-color-light;
+          text-decoration: none;
+          &:hover,
+          &:focus {
+            color: $link-hover-color-light;
+            text-decoration: underline;
+            outline: none;
+            @include smooth-transition();
+          }
           .projects-card-link-icon {
             margin: 0 5px;
+            @include smooth-transition();
+          }
+          &:hover .projects-card-link-icon,
+          &:focus .projects-card-link-icon {
+            transform: translateX(2px);
           }
         }
       }
@@ -167,7 +197,7 @@
     cursor: pointer;
     align-self: flex-start;
     margin-top: 2rem;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    @include smooth-transition();
     text-decoration: none;
     text-align: center;
     display: inline-flex;
@@ -176,6 +206,7 @@
 
     &:hover,
     &:focus {
+      @include smooth-transition();
       background-color: $link-hover-color-light;
       outline: none;
       transform: translateY(-2px);
@@ -183,7 +214,7 @@
     }
 
     i {
-      transition: transform 0.3s ease;
+      @include smooth-transition(transform, 0.3s, cubic-bezier(0.25, 0.8, 0.25, 1));
     }
 
     &:hover i {

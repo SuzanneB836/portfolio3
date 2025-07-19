@@ -22,6 +22,15 @@
           display: flex;
           align-items: center;
           padding: 20px 10px;
+          cursor: pointer;
+          @include smooth-transition();
+          color: $link-color-light;
+          &:hover,
+          &:focus {
+            color: $link-hover-color-light;
+            transform: translateY(-2px);
+            @include smooth-transition();
+          }
 
           .nav-icon-wrapper {
             padding-right: 5px;
@@ -40,7 +49,16 @@
         all: unset;
         padding: 20px 10px;
         cursor: pointer;
+        @include smooth-transition();
+        color: $link-color-light;
+        &:hover,
+        &:focus {
+          color: $link-hover-color-light;
+          transform: translateY(-2px);
+          @include smooth-transition();
+        }
         .theme-icon {
+          @include smooth-transition();
         }
       }
     }
