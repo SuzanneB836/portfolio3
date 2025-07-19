@@ -56,10 +56,14 @@ if (!$project) {
                 <p><?php echo $project['description']; ?></p>
         </div>
         <div class="live">
-
+            <a href="<?php echo $project['link']; ?>" target="_blank" class="view-live">
+                <i class="icon" data-lucide="link"></i> View live
+            </a>
         </div>
         <div class="return">
-            <a href="projects.php" class="button">Back to Projects</a>
+            <a href="projects.php" class="button">
+                <i class="icon" data-lucide="undo"></i> Back to Projects
+            </a>
         </div>
     </div>
 </div>
@@ -69,6 +73,7 @@ if (!$project) {
 
     <!-- Load JavaScript files at the end of the body -->
     <script src="javascript/script.js"></script>
+    <script src="javascript/animation.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         // Initialize Lucide icons

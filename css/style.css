@@ -582,18 +582,52 @@ body.dark-mode textarea:-webkit-autofill {
   -webkit-text-fill-color: #F1EFEC !important;
 }
 
+.site-project-detail .full-container .content-container .image {
+  width: 60%;
+  margin: 0 auto;
+  aspect-ratio: 600/325;
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+.site-project-detail .full-container .content-container .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-radius: 1.2rem;
+}
+.site-project-detail .full-container .content-container .title {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #006A71;
+  margin-top: 20px;
+}
+.site-project-detail .full-container .content-container .title h1 {
+  all: unset;
+}
 .site-project-detail .full-container .content-container .skills {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 .site-project-detail .full-container .content-container .skills .skill {
   border: 1px solid #48A6A7;
   background-color: rgba(72, 166, 167, 0.1);
   padding: 0.4rem 0.9rem;
   border-radius: 2rem;
-  font-size: 0.8rem;
+  font-size: 15px;
   font-weight: 500;
   color: #48A6A7;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -603,6 +637,102 @@ body.dark-mode textarea:-webkit-autofill {
   color: #ffffff;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+.site-project-detail .full-container .content-container .summary {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.site-project-detail .full-container .content-container .summary p {
+  all: unset;
+}
+.site-project-detail .full-container .content-container .description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.site-project-detail .full-container .content-container .description p {
+  all: unset;
+}
+.site-project-detail .full-container .content-container .live {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.site-project-detail .full-container .content-container .live a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.site-project-detail .full-container .content-container .live a .icon {
+  margin-right: 5px;
+}
+.site-project-detail .full-container .content-container .return {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.site-project-detail .full-container .content-container .return a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  background-color: rgba(72, 166, 167, 0.1);
+  color: #48A6A7;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid #48A6A7;
+}
+.site-project-detail .full-container .content-container .return a .icon {
+  margin-right: 5px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.site-project-detail .full-container .content-container .return a:hover {
+  background-color: #48A6A7;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.site-project-detail .full-container .content-container .return a:hover .icon {
+  transform: rotate(-360deg);
+  transition: 0.4s 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.site-project-detail .full-container .content-container .return a:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+.site-project-detail .full-container .content-container .return a:active {
+  transform: translateY(0);
+}
+.site-project-detail .full-container .content-container .ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
 .hero-section {
   margin: 25px 0;
   display: flex;
