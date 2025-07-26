@@ -1,6 +1,173 @@
 @use "../variable" as *;
 @use "../mixins" as *;
 
-.hero-section {
-    margin: 25px 0;
+.experience-section {
+  background: $background-color-light;
+  margin: 25px 0;
+
+  .experience-title {
+    @include main-font;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    
+    &-accent {
+      color: $link-color-light;
+    }
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 900px;
+    justify-content: center;
+  }
+
+  .experience-card {
+    min-width: 350px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba($link-color-light, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    @include shadow;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba($link-hover-color-light, 0.15);
+    }
+  }
+
+  .experience-current {
+    border-top: 3px solid $link-color-light;
+    position: relative;
+    
+    &::after {
+      content: "Current";
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: $link-color-light;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  }
+
+  .experience-year {
+    @include second-font;
+    font-size: 0.95rem;
+    color: rgba($text-color-light, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  .experience-role {
+    @include second-font;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: $text-color-light;
+    font-weight: 600;
+  }
+
+  .experience-company {
+    @include main-font;
+    font-size: 1.1rem;
+    color: $link-color-light;
+    font-weight: 600;
+  }
+}
+
+body.dark-mode {
+  .experience-section {
+    background: $background-color-dark;
+    
+    .experience-title-accent {
+      color: $link-color-dark;
+    }
+    
+    .experience-card {
+      background: rgba($background-color-dark, 0.9);
+      border-color: rgba($link-color-dark, 0.3);
+    }
+    
+    .experience-current {
+      border-top-color: $link-color-dark;
+      
+      &::after {
+        background: $link-color-dark;
+        color: $background-color-dark;
+      }
+    }
+    
+    .experience-year {
+      color: rgba($text-color-dark, 0.7);
+    }
+    
+    .experience-role {
+      color: $text-color-dark;
+    }
+    
+    .experience-company {
+      color: $link-color-dark;
+    }
+  }
+}
+
+@media (max-width: 1070px) {
+  .experience-section {
+    padding: 4rem 1.5rem;
+    
+    .experience-title {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .experience-grid {
+      grid-template-columns: minmax(300px, 500px);
+    }
+    
+    .experience-card {
+      min-width: unset;
+      width: 100%;
+      padding: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 3rem 1rem;
+    
+    .experience-title {
+      font-size: 2rem;
+      flex-direction: column;
+      gap: 0;
+    }
+    
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .experience-card {
+      padding: 1.25rem;
+      
+      &.experience-current::after {
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+    
+    .experience-role {
+      font-size: 1.3rem;
+    }
+  }
 }

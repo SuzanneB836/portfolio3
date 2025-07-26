@@ -29,7 +29,9 @@ $isIndex = true;
                     ?>
                 </div>
                 <div class="exp-include">
-                    <!-- Experience content here -->
+                    <?php
+                        include 'sections-index/exp-section.php';
+                    ?>
                 </div>
                 <div class="projects-include">
                     <?php

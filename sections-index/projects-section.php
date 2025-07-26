@@ -6,6 +6,10 @@ $projectLimit = $isIndex ? $defaultProjectLimit : count($projects);
 ?>
 
 <div class="projects-section">
+    <div class="projects-title">
+        <h2>Projects</h2>
+    </div>
+
     <div class="projects-filter-toolbar" role="toolbar" aria-label="Project filter buttons">
         <button class="projects-filter-btn" data-filter="all">
             <i data-lucide="layout-grid" class="projects-filter-icon"></i>
