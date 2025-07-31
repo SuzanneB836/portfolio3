@@ -15,25 +15,25 @@ $projectLimit = $isIndex ? $defaultProjectLimit : count($projects);
             <i data-lucide="layout-grid" class="projects-filter-icon"></i>
             <span class="projects-filter-label">Show All</span>
         </button>
-        <button class="projects-filter-btn" data-filter="html">
-            <i data-lucide="file-code" class="projects-filter-icon"></i>
-            <span class="projects-filter-label">HTML</span>
+        <button class="projects-filter-btn" data-filter="php">
+            <i data-lucide="atom" class="projects-filter-icon"></i>
+            <span class="projects-filter-label">PHP</span>
         </button>
-        <button class="projects-filter-btn" data-filter="css">
+        <button class="projects-filter-btn" data-filter="phpmyadmin">
+            <i data-lucide="server-cog" class="projects-filter-icon"></i>
+            <span class="projects-filter-label">phpMyAdmin</span>
+        </button>
+        <button class="projects-filter-btn" data-filter="wordpress">
+            <i data-lucide="file-code" class="projects-filter-icon"></i>
+            <span class="projects-filter-label">WordPress</span>
+        </button>
+        <button class="projects-filter-btn" data-filter="scss,css">
             <i data-lucide="palette" class="projects-filter-icon"></i>
-            <span class="projects-filter-label">CSS</span>
+            <span class="projects-filter-label">(S)CSS</span>
         </button>
         <button class="projects-filter-btn" data-filter="javascript">
             <i data-lucide="sparkles" class="projects-filter-icon"></i>
             <span class="projects-filter-label">JavaScript</span>
-        </button>
-        <button class="projects-filter-btn" data-filter="wordpress">
-            <i data-lucide="server-cog" class="projects-filter-icon"></i>
-            <span class="projects-filter-label">WordPress</span>
-        </button>
-        <button class="projects-filter-btn" data-filter="react">
-            <i data-lucide="atom" class="projects-filter-icon"></i>
-            <span class="projects-filter-label">React</span>
         </button>
     </div>
 

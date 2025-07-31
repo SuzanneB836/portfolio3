@@ -13,10 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Filter projects based on selection
   function filterProjects(filter) {
+    const filters = filter.split(',');
     projectCards.forEach(card => {
       const tags = card.getAttribute('data-tags').split(' ');
-
-      if (filter === 'all' || tags.includes(filter)) {
+      if (
+        filter === 'all' ||
+        filters.some(f => tags.includes(f))
+      ) {
         card.classList.remove('hide');
       } else {
         card.classList.add('hide');

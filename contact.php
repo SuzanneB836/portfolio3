@@ -15,7 +15,7 @@
     <div class="full-container">
         <div class="content-container">
             <h1>Let's Connect</h1>
-            <p class="lead">Have a question, idea, or just want to say hi? Drop a message below—I'd love to hear from you!</p>
+            <p class="lead">Have a question, idea, or just want to say hi? Drop a message below. I'd love to hear from you!</p>
 
             <form id="contact-form">
                 <div class="form-group">

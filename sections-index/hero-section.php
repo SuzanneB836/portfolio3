@@ -26,10 +26,10 @@
             </div>
             <div class="cta-buttons">
                 <div class="cta-1">
-                    <a href="project.php" class="cta-btn">View Projects</a>
+                    <a href="./projects.php" class="cta-btn">View Projects</a>
                 </div>
                 <div class="cta-1">
-                    <a href="contact.php" class="btn">Contact Me</a>
+                    <a href="./contact.php" class="btn">Contact Me</a>
                 </div>
             </div>
         </div>
