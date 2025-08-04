@@ -1,7 +1,18 @@
 
 <?php
 
+
 $projects = [
+    [
+        'project_id'   => 'portfolio2024',
+        'title'        => 'Portfolio 2024',
+        'summary'      => 'My first personal portfolio, built from scratch using HTML, CSS, and a touch of JavaScript.',
+        'description'  => 'This was the very first version of my personal portfolio, created in 2024 to showcase my early web projects. I built it entirely from scratch using HTML and CSS, with a bit of JavaScript to add small interactive touches like navigation behavior or dynamic elements. The main goal was to create a clean and visually appealing layout that would present my work clearly and professionally. I focused on consistent styling, responsive design, and semantic HTML structure. While simple in functionality, this project helped me get comfortable writing CSS by hand and thinking about layout, spacing, and user experience. It also marked my first steps into using JavaScript in a real project context.',
+        'skills'       => ['HTML', 'CSS', 'JavaScript'],
+        'image'        => 'assets/portfolio_2024.png',
+        'tags'         => 'html css javascript',
+        'link'         => 'https://suzanneb836.github.io/portfolio/'
+    ],
     [
         'project_id'   => 'chocodesk',
         'title'        => 'Chocodesk',
